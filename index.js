@@ -2,12 +2,16 @@ import express from "express";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import cors from "cors";
 
 // Load environment variables from .env file
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Enable CORS for all routes
+app.use(cors());
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
